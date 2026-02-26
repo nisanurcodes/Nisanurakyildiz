@@ -1,1 +1,0 @@
-# Nisa-Nur-Aky-ld-z
