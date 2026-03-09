@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="shopin-banner.png" width="900"/>
+  <img src="studytrack-banner.png" alt="StudyTrack Banner" width="900"/>
 </p>
 
 <h1 align="center">StudyTrack</h1>
@@ -9,7 +9,6 @@ Ders Takibi • Çalışma Planı • AI Destekli Öneriler
 </p>
 
 ---
-
 # 📌 Proje Tanımı
 
 **StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.
