@@ -34,25 +34,23 @@ Bu sayede öğrenciler daha **planlı ve verimli bir çalışma düzeni oluştur
 
 ---
 
-# 📄 Dokümantasyon
+## 📄 Dokümantasyon
 
-Proje ile ilgili tüm dokümanlar aşağıdaki bağlantılarda yer almaktadır:
+Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
 
-1. **Gereksinim Analizi**
-   📄 [Gereksinimler](./Nisa-Nur-Akyildiz/Gereksinimler.md)
+1. [Gereksinim Analizi](Nisa-Nur-Akyildiz/Gereksinim-Analizi.md)
 
-2. **REST API Tasarımı**
-   📄 [OpenAPI Dosyası](./openapi.yaml)
+2. [REST API Tasarımı](openapi.yaml)
 
-3. REST API
+3. [REST API](Rest-API.md)
 
-4. Web Front-End
+4. [Web Front-End](WebFrontEnd.md)
 
-5. Mobil Front-End
+5. [Mobil Front-End](MobilFrontEnd.md)
 
-6. Mobil Backend
+6. [Mobil Backend](MobilBackEnd.md)
 
-7. Video Sunum
+7. [Video Sunum](Sunum.md)
 
 ---
 
