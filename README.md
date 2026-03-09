@@ -1,4 +1,20 @@
+<p align="center">
+  <img src="./studytrack-banner.png" width="900">
+</p>
 
+<h1 align="center">StudyTrack</h1>
+
+<p align="center">
+Ders Takibi • Çalışma Planı • AI Destekli Öneriler
+</p>
+
+---
+
+<p align="center">
+Yazılım Mühendisliği Dersi – Dönem Projesi
+</p>
+
+---
 # 📌 Proje Tanımı
 
 **StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.
