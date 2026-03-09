@@ -1,0 +1,616 @@
+openapi: 3.0.3
+info:
+  title: StudyTrack API
+  version: 1.0.0
+  description: >
+    StudyTrack uygulaması için REST API tasarımı.
+    Bu API; kullanıcı yönetimi, ders yönetimi, çalışma oturumları
+    ve AI destekli çalışma planı işlemlerini kapsar.
+
+servers:
+  - url: http://localhost:3000
+    description: Local Development Server
+  - url: https://api.studytrack.com
+    description: Production Server
+
+tags:
+  - name: Auth
+    description: Kimlik doğrulama işlemleri
+  - name: Users
+    description: Kullanıcı işlemleri
+  - name: Courses
+    description: Ders işlemleri
+  - name: StudySessions
+    description: Çalışma oturumu işlemleri
+  - name: AIStudyPlan
+    description: AI destekli çalışma planı işlemleri
+
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Kullanıcı kaydı oluşturur
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Kayıt başarılı
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Geçersiz istek
+
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Kullanıcı giriş yapar
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Giriş başarılı
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Geçersiz e-posta veya şifre
+
+  /auth/logout:
+    post:
+      tags:
+        - Auth
+      summary: Kullanıcı çıkış yapar
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Çıkış başarılı
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '401':
+          description: Yetkisiz erişim
+
+  /users/{userId}:
+    get:
+      tags:
+        - Users
+      summary: Kullanıcı profilini görüntüler
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Profil bilgileri getirildi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Kullanıcı bulunamadı
+
+    put:
+      tags:
+        - Users
+      summary: Kullanıcı profilini günceller
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateUserRequest'
+      responses:
+        '200':
+          description: Profil güncellendi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          description: Geçersiz veri
+        '404':
+          description: Kullanıcı bulunamadı
+
+    delete:
+      tags:
+        - Users
+      summary: Kullanıcı hesabını siler
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/UserId'
+      responses:
+        '200':
+          description: Hesap silindi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '404':
+          description: Kullanıcı bulunamadı
+
+  /courses:
+    post:
+      tags:
+        - Courses
+      summary: Yeni ders oluşturur
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCourseRequest'
+      responses:
+        '201':
+          description: Ders oluşturuldu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '400':
+          description: Geçersiz veri
+
+    get:
+      tags:
+        - Courses
+      summary: Dersleri listeler
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Ders listesi getirildi
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Course'
+
+  /courses/{courseId}:
+    put:
+      tags:
+        - Courses
+      summary: Dersi günceller
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/CourseId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCourseRequest'
+      responses:
+        '200':
+          description: Ders güncellendi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '404':
+          description: Ders bulunamadı
+
+    delete:
+      tags:
+        - Courses
+      summary: Dersi siler
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/CourseId'
+      responses:
+        '200':
+          description: Ders silindi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '404':
+          description: Ders bulunamadı
+
+  /study-sessions:
+    post:
+      tags:
+        - StudySessions
+      summary: Yeni çalışma oturumu başlatır
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudySessionRequest'
+      responses:
+        '201':
+          description: Çalışma oturumu oluşturuldu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudySession'
+
+    get:
+      tags:
+        - StudySessions
+      summary: Geçmiş çalışma oturumlarını listeler
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Çalışma oturumları getirildi
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StudySession'
+
+  /study-sessions/{sessionId}:
+    put:
+      tags:
+        - StudySessions
+      summary: Çalışma oturumunu sonlandırır veya günceller
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStudySessionRequest'
+      responses:
+        '200':
+          description: Çalışma oturumu güncellendi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudySession'
+        '404':
+          description: Oturum bulunamadı
+
+    delete:
+      tags:
+        - StudySessions
+      summary: Çalışma kaydını siler
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/SessionId'
+      responses:
+        '200':
+          description: Çalışma kaydı silindi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '404':
+          description: Oturum bulunamadı
+
+  /ai/study-plan:
+    post:
+      tags:
+        - AIStudyPlan
+      summary: AI destekli çalışma planı oluşturur
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateStudyPlanRequest'
+      responses:
+        '201':
+          description: Çalışma planı oluşturuldu
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudyPlan'
+
+    get:
+      tags:
+        - AIStudyPlan
+      summary: Çalışma planını görüntüler
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Çalışma planı getirildi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudyPlan'
+        '404':
+          description: Çalışma planı bulunamadı
+
+    put:
+      tags:
+        - AIStudyPlan
+      summary: Çalışma planını günceller
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateStudyPlanRequest'
+      responses:
+        '200':
+          description: Çalışma planı güncellendi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StudyPlan'
+        '404':
+          description: Çalışma planı bulunamadı
+
+    delete:
+      tags:
+        - AIStudyPlan
+      summary: Çalışma planını siler
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Çalışma planı silindi
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        '404':
+          description: Çalışma planı bulunamadı
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    UserId:
+      name: userId
+      in: path
+      required: true
+      description: Kullanıcı kimliği
+      schema:
+        type: integer
+        example: 1
+
+    CourseId:
+      name: courseId
+      in: path
+      required: true
+      description: Ders kimliği
+      schema:
+        type: integer
+        example: 10
+
+    SessionId:
+      name: sessionId
+      in: path
+      required: true
+      description: Çalışma oturumu kimliği
+      schema:
+        type: integer
+        example: 20
+
+  schemas:
+    RegisterRequest:
+      type: object
+      required:
+        - name
+        - email
+        - password
+      properties:
+        name:
+          type: string
+          example: Nisa Nur Akyıldız
+        email:
+          type: string
+          format: email
+          example: nisa@example.com
+        password:
+          type: string
+          format: password
+          example: 123456
+
+    LoginRequest:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+          example: nisa@example.com
+        password:
+          type: string
+          format: password
+          example: 123456
+
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          example: jwt_token_example
+        user:
+          $ref: '#/components/schemas/User'
+
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: Nisa Nur Akyıldız
+        email:
+          type: string
+          format: email
+          example: nisa@example.com
+
+    UpdateUserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Nisa Nur
+        email:
+          type: string
+          format: email
+          example: nisa@example.com
+
+    CreateCourseRequest:
+      type: object
+      required:
+        - title
+      properties:
+        title:
+          type: string
+          example: Veri Yapıları
+        description:
+          type: string
+          example: Ağaçlar, kuyruklar ve bağlı listeler konularını içerir.
+
+    UpdateCourseRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          example: Yazılım Mühendisliği
+        description:
+          type: string
+          example: Gereksinim analizi ve API tasarımı çalışmaları.
+
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 10
+        title:
+          type: string
+          example: Yazılım Mühendisliği
+        description:
+          type: string
+          example: Ders açıklaması
+
+    CreateStudySessionRequest:
+      type: object
+      required:
+        - courseId
+        - startTime
+      properties:
+        courseId:
+          type: integer
+          example: 10
+        startTime:
+          type: string
+          format: date-time
+          example: 2026-03-09T14:00:00Z
+
+    UpdateStudySessionRequest:
+      type: object
+      properties:
+        endTime:
+          type: string
+          format: date-time
+          example: 2026-03-09T15:30:00Z
+        durationMinutes:
+          type: integer
+          example: 90
+
+    StudySession:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 20
+        courseId:
+          type: integer
+          example: 10
+        startTime:
+          type: string
+          format: date-time
+          example: 2026-03-09T14:00:00Z
+        endTime:
+          type: string
+          format: date-time
+          example: 2026-03-09T15:30:00Z
+        durationMinutes:
+          type: integer
+          example: 90
+
+    CreateStudyPlanRequest:
+      type: object
+      properties:
+        targetExam:
+          type: string
+          example: Yazılım Mühendisliği Vize
+        availableHoursPerDay:
+          type: integer
+          example: 3
+
+    UpdateStudyPlanRequest:
+      type: object
+      properties:
+        recommendations:
+          type: array
+          items:
+            type: string
+          example:
+            - Pazartesi günü 2 saat algoritma çalış
+            - Salı günü 1 saat tekrar yap
+
+    StudyPlan:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 5
+        userId:
+          type: integer
+          example: 1
+        recommendations:
+          type: array
+          items:
+            type: string
+          example:
+            - Pazartesi günü 2 saat algoritma çalış
+            - Salı günü 1 saat tekrar yap
+
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: İşlem başarılı
