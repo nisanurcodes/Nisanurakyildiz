@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/studytrack-banner.png" alt="StudyTrack Banner" width="900"/>
+  <img src="shopin-banner.png" width="900"/>
 </p>
 
 <h1 align="center">StudyTrack</h1>
@@ -12,28 +12,26 @@ Ders Takibi • Çalışma Planı • AI Destekli Öneriler
 
 # 📌 Proje Tanımı
 
-**StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.  
+**StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.
 
 Uygulama; ders ekleme ve takip etme, çalışma oturumlarını başlatıp bitirme, geçmiş çalışma verilerini görüntüleme gibi temel özelliklerin yanı sıra **yapay zeka destekli kişisel çalışma planları oluşturma** imkanı sunar.
 
-Birçok öğrenci hangi derse ne kadar zaman ayırdığını, hangi konuları tamamladığını veya sınavlara nasıl hazırlanması gerektiğini düzenli takip etmekte zorlanmaktadır. StudyTrack, bu probleme dijital ve akıllı bir çözüm sunmayı amaçlar.
+Birçok öğrenci hangi derse ne kadar zaman ayırdığını, hangi konuları tamamladığını veya sınavlara nasıl hazırlanması gerektiğini düzenli takip etmekte zorlanmaktadır. StudyTrack bu probleme **dijital ve akıllı bir çözüm** sunmayı hedefler.
 
 Kullanıcılar sisteme kayıt olduktan sonra:
 
 - Derslerini ekleyebilir
 - Konu takibi yapabilir
 - Çalışma oturumlarını kaydedebilir
-- AI destekli öneriler ile kişisel çalışma planı oluşturabilir
+- AI destekli öneriler ile çalışma planı oluşturabilir
 
-Bu sayede öğrenciler **daha planlı ve verimli bir çalışma düzeni** oluşturabilir.
+Bu sayede öğrenciler daha **planlı ve verimli bir çalışma düzeni** oluşturabilir.
 
 ---
 
-# 📚 Proje Kategorisi
+# 📂 Proje Kategorisi
 
-**Eğitim Teknolojileri / Kişisel Verimlilik**
-
-StudyTrack; ders takibi, çalışma planlaması ve yapay zeka destekli öneriler sunan bir **eğitim ve verimlilik uygulamasıdır.**
+Eğitim Teknolojileri / Kişisel Verimlilik
 
 ---
 
@@ -41,11 +39,10 @@ StudyTrack; ders takibi, çalışma planlaması ve yapay zeka destekli öneriler
 
 Bu projenin geliştirilmesinde ilham alınan uygulamalar:
 
-- **Notion**
-- **Todoist**
+- Notion
+- Todoist
 
-Bu uygulamalar görev takibi ve planlama konusunda güçlü araçlar sunmaktadır.  
-StudyTrack ise bu yaklaşımı **öğrencilerin akademik çalışma süreçlerine özel** olarak uyarlamaktadır.
+Bu uygulamalar görev takibi ve planlama konusunda güçlü araçlar sunmaktadır. StudyTrack ise bu mantığı **öğrencilerin ders planlama ihtiyaçlarına özel olarak** uyarlamaktadır.
 
 ---
 
@@ -53,58 +50,49 @@ StudyTrack ise bu yaklaşımı **öğrencilerin akademik çalışma süreçlerin
 
 | Bileşen | Adres |
 |-------|------|
-| 🌐 REST API | https://api.your-domain.com |
-| 💻 Web Ön Uç | https://app.your-domain.com |
-| 📱 Mobil Uygulama | https://mobile.your-domain.com |
-
-> Bu bağlantılar proje geliştirme süreci tamamlandıktan sonra güncellenecektir.
+| REST API | https://api.your-domain.com |
+| Web Ön Uç | https://app.your-domain.com |
+| Mobil Uygulama | https://mobile.your-domain.com |
 
 ---
 
-# 👨‍💻 Proje Ekibi
+# 👥 Proje Ekibi
 
-### Grup Adı
-StudyTrack
+Bu proje **tek kişi tarafından geliştirilmektedir.**
 
-### Ekip Üyeleri
-
-| # | Ad Soyad | Rol |
-|---|---|---|
-| 1 | Nisa Nur Akyıldız | Full-Stack Developer |
-
-> Bu proje tek kişi tarafından geliştirilmiştir.
+| Ad Soyad | Rol |
+|--------|-----|
+| Nisa Nur Akyıldız | Geliştirici |
 
 ---
 
 # 📄 Dokümantasyon
 
-Proje ile ilgili tüm dokümanlara aşağıdaki bağlantılardan erişebilirsiniz.
+Proje ile ilgili tüm dokümanlar aşağıdaki bağlantılarda yer almaktadır:
 
-| Belge | Açıklama | Bağlantı |
-|------|---------|---------|
-| Gereksinim Analizi | Fonksiyonel gereksinimler ve sistem ihtiyaçları | Görüntüle |
-| REST API Tasarımı | Endpoint tasarımları ve API mimarisi | Görüntüle |
-| REST API | API dokümantasyonu | Görüntüle |
-| Web Front-End | Web arayüzü teknik detayları | Görüntüle |
-| Mobil Front-End | Mobil uygulama ekran tasarımları | Görüntüle |
-| Mobil Backend | Backend servisleri | Görüntüle |
-| Video Sunum | Proje demo videosu | İzle |
+1. Gereksinim Analizi
+2. REST API Tasarımı
+3. REST API
+4. Web Front-End
+5. Mobil Front-End
+6. Mobil Backend
+7. Video Sunum
 
 ---
 
 # ⚙️ Temel Özellikler
 
-- 🔐 **Kullanıcı Yönetimi**  
-  Kayıt olma, giriş yapma, çıkış yapma, profil güncelleme ve hesap silme
+- 🔐 Kullanıcı Yönetimi  
+  Kayıt olma, giriş yapma, çıkış yapma, profil güncelleme
 
-- 📚 **Ders Yönetimi**  
-  Ders ekleme, ders listeleme, güncelleme ve silme
+- 📚 Ders Yönetimi  
+  Ders ekleme, listeleme, güncelleme ve silme
 
-- ⏱ **Çalışma Oturumları**  
-  Çalışma başlatma, bitirme, geçmiş oturumları görüntüleme
+- ⏱ Çalışma Oturumları  
+  Çalışma başlatma, bitirme ve geçmiş oturumları görüntüleme
 
-- 🤖 **AI Destekli Planlama**  
-  Kullanıcı verilerine göre kişisel çalışma planı oluşturma
+- 🤖 AI Destekli Planlama  
+  Yapay zeka ile kişisel çalışma planı oluşturma
 
 ---
 
@@ -112,10 +100,10 @@ Proje ile ilgili tüm dokümanlara aşağıdaki bağlantılardan erişebilirsini
 
 | Katman | Teknoloji |
 |------|-----------|
-| Backend | Node.js / Express |
-| Web Front-End | React |
-| Mobil | Flutter |
-| Veritabanı | PostgreSQL |
+| Backend | Node.js / Django / Spring Boot |
+| Web Frontend | React / Vue |
+| Mobil | Flutter / React Native |
+| Veritabanı | PostgreSQL / MongoDB |
 | AI Entegrasyonu | OpenAI API |
 
 ---
