@@ -9,61 +9,97 @@ Ders Takibi • Çalışma Planı • AI Destekli Öneriler
 </p>
 
 ---
+<p align="center">
+<img src="studytrack-banner.png" alt="StudyTrack Banner" width="900"/>
+</p>
+
+<h1 align="center">StudyTrack</h1>
+
+<p align="center">
+Ders Takibi • Çalışma Planı • AI Destekli Öneriler
+</p>
+
+---
+
 # 📌 Proje Tanımı
 
 **StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.
 
 Uygulama; ders ekleme ve takip etme, çalışma oturumlarını başlatıp bitirme, geçmiş çalışma verilerini görüntüleme gibi temel özelliklerin yanı sıra **yapay zeka destekli kişisel çalışma planları oluşturma** imkanı sunar.
 
-Birçok öğrenci hangi derse ne kadar zaman ayırdığını, hangi konuları tamamladığını veya sınavlara nasıl hazırlanması gerektiğini düzenli takip etmekte zorlanmaktadır. StudyTrack bu probleme **dijital ve akıllı bir çözüm** sunmayı hedefler.
+Birçok öğrenci hangi derse ne kadar zaman ayırdığını, hangi konuları tamamladığını veya sınavlara nasıl hazırlanması gerektiğini düzenli takip etmekte zorlanmaktadır. StudyTrack bu probleme **dijital ve akıllı bir çözüm sunmayı hedefler.**
 
 Kullanıcılar sisteme kayıt olduktan sonra:
 
-- Derslerini ekleyebilir
-- Konu takibi yapabilir
-- Çalışma oturumlarını kaydedebilir
-- AI destekli öneriler ile çalışma planı oluşturabilir
+* Derslerini ekleyebilir
+* Konu takibi yapabilir
+* Çalışma oturumlarını kaydedebilir
+* AI destekli öneriler ile çalışma planı oluşturabilir
 
-Bu sayede öğrenciler daha **planlı ve verimli bir çalışma düzeni** oluşturabilir.
-
----
-
-# 📂 Proje Kategorisi
-
-Eğitim Teknolojileri / Kişisel Verimlilik
+Bu sayede öğrenciler daha **planlı ve verimli bir çalışma düzeni oluşturabilir.**
 
 ---
 
-# 🔎 Referans Uygulama
+# 🧠 Temel Özellikler
 
-Bu projenin geliştirilmesinde ilham alınan uygulamalar:
-
-- Notion
-- Todoist
-
-Bu uygulamalar görev takibi ve planlama konusunda güçlü araçlar sunmaktadır. StudyTrack ise bu mantığı **öğrencilerin ders planlama ihtiyaçlarına özel olarak** uyarlamaktadır.
-
----
-
-# 🔗 Proje Linkleri
-
-| Bileşen | Adres |
-|-------|------|
-| REST API | https://api.your-domain.com |
-| Web Ön Uç | https://app.your-domain.com |
-| Mobil Uygulama | https://mobile.your-domain.com |
+* 👤 Kullanıcı kayıt ve giriş sistemi
+* 📚 Ders ve konu yönetimi
+* ⏱️ Çalışma oturumu takibi
+* 📊 Çalışma istatistikleri
+* 🤖 AI destekli çalışma planı önerileri
 
 ---
 
-# 👥 Proje Ekibi
+# 🖥️ Proje Görseli
 
-Bu proje **tek kişi tarafından geliştirilmektedir.**
-
-| Ad Soyad | Rol |
-|--------|-----|
-| Nisa Nur Akyıldız | Geliştirici |
+<p align="center">
+<img src="studytrack-banner.png" width="900">
+</p>
 
 ---
+
+# 🔗 REST API Tasarımı
+
+Bu proje için **REST API tasarımı OpenAPI standardı kullanılarak hazırlanmıştır.**
+
+API dokümantasyonu aşağıdaki dosyada yer almaktadır:
+
+📄 **OpenAPI Dosyası:**
+[openapi.yaml](./openapi.yaml)
+
+API aşağıdaki modülleri kapsamaktadır:
+
+* Authentication işlemleri
+* Kullanıcı yönetimi
+* Ders yönetimi
+* Çalışma oturumları
+* AI destekli çalışma planı
+
+---
+
+# ⚙️ Kullanılan Teknolojiler
+
+| Katman             | Teknoloji         |
+| ------------------ | ----------------- |
+| Backend            | Node.js / Express |
+| Frontend           | React             |
+| Mobil              | React Native      |
+| Veritabanı         | PostgreSQL        |
+| API Dokümantasyonu | OpenAPI / Swagger |
+
+---
+
+# 👩‍💻 Geliştirici
+
+| İsim              |
+| ----------------- |
+| Nisa Nur Akyıldız |
+
+---
+
+<p align="center">
+Yazılım Mühendisliği Dersi – Dönem Projesi
+</p>
 
 # 📄 Dokümantasyon
 
