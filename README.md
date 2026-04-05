@@ -2,59 +2,29 @@
   <img src="./studytrack-banner.png" width="900">
 </p>
 
-<h1 align="center">StudyTrack</h1>
+<h1 align="center">📚 StudyTrack</h1>
 
 <p align="center">
-Ders Takibi • Çalışma Planı • AI Destekli Öneriler
+  <b>Ders Takibi • Çalışma Planı • AI Destekli Öneriler</b>
+</p>
+
+<p align="center">
+  Yazılım Mühendisliği Dersi – Dönem Projesi
 </p>
 
 ---
 
-<p align="center">
-Yazılım Mühendisliği Dersi – Dönem Projesi
-</p>
-
----
-# 📌 Proje Tanımı
+## 📌 Proje Tanımı
 
 **StudyTrack**, öğrencilerin derslerini ve çalışma süreçlerini daha verimli yönetebilmesi amacıyla geliştirilmiş bir web ve mobil uygulamadır.
 
 Uygulama; ders ekleme ve takip etme, çalışma oturumlarını başlatıp bitirme, geçmiş çalışma verilerini görüntüleme gibi temel özelliklerin yanı sıra **yapay zeka destekli kişisel çalışma planları oluşturma** imkanı sunar.
 
-Birçok öğrenci hangi derse ne kadar zaman ayırdığını, hangi konuları tamamladığını veya sınavlara nasıl hazırlanması gerektiğini düzenli takip etmekte zorlanmaktadır. StudyTrack bu probleme **dijital ve akıllı bir çözüm sunmayı hedefler.**
-
-Kullanıcılar sisteme kayıt olduktan sonra:
-
-* Derslerini ekleyebilir
-* Konu takibi yapabilir
-* Çalışma oturumlarını kaydedebilir
-* AI destekli öneriler ile çalışma planı oluşturabilir
-
-Bu sayede öğrenciler daha **planlı ve verimli bir çalışma düzeni oluşturabilir.**
+🎯 **StudyTrack bu probleme dijital ve akıllı bir çözüm sunmayı hedefler.**
 
 ---
 
-## 📄 Dokümantasyon
-
-Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
-
-1. [Gereksinim Analizi](Nisa-Nur-Akyildiz/Gereksinim-Analizi.md)
-
-2. [REST API Tasarımı](openapi.yaml)
-
-3. [REST API](Rest-API.md)
-
-4. [Web Front-End](WebFrontEnd.md)
-
-5. [Mobil Front-End](MobilFrontEnd.md)
-
-6. [Mobil Backend](MobilBackEnd.md)
-
-7. [Video Sunum](Sunum.md)
-
----
-
-# ⚙️ Temel Özellikler
+## 🚀 Özellikler
 
 ### 🔐 Kullanıcı Yönetimi
 
@@ -83,18 +53,26 @@ Proje dokümantasyonuna aşağıdaki linklerden erişebilirsiniz:
 
 ---
 
-# 🔗 REST API
+## 🔗 Canlı REST API
 
-Bu proje için **REST API tasarımı OpenAPI standardı kullanılarak hazırlanmıştır.**
-
-API dokümantasyonu:
-
-📄 **OpenAPI Dosyası**
-[openapi.yaml](./openapi.yaml)
+🚀 **Swagger UI (Canlı API Dokümantasyonu):**
+👉 https://studytrack-api-nu1x.onrender.com/swagger/index.html
 
 ---
 
-# ⚙️ Kullanılan Teknolojiler
+## 📄 Dokümantasyon
+
+* 📑 [Gereksinim Analizi](./Nisa-Nur-Akyildiz/Gereksinim-Analizi.md)
+* 📘 [REST API Tasarımı](./openapi.yaml)
+* 📗 [REST API Detayları](./Rest-API.md)
+* 💻 [Web Front-End](./WebFrontEnd.md)
+* 📱 [Mobil Front-End](./MobilFrontEnd.md)
+* ⚙️ [Mobil Backend](./MobilBackEnd.md)
+* 🎥 [Video Sunum](./Sunum.md)
+
+---
+
+## ⚙️ Kullanılan Teknolojiler
 
 | Katman             | Teknoloji         |
 | ------------------ | ----------------- |
@@ -106,8 +84,41 @@ API dokümantasyonu:
 
 ---
 
-# 👩‍💻 Geliştirici
+## 🛠️ Kurulum
 
-| İsim              |
-| ----------------- |
-| Nisa Nur Akyıldız |
+### 1. Repo'yu klonla
+
+```bash
+git clone https://github.com/kullaniciadi/studytrack.git
+cd studytrack
+```
+
+### 2. Backend başlat
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 3. Frontend başlat
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 👩‍💻 Geliştirici
+
+<p align="center">
+  <b>Nisa Nur Akyıldız</b>
+</p>
+
+---
+
+## ⭐ Not
+
+Bu proje, Yazılım Mühendisliği dersi kapsamında geliştirilmiştir ve eğitim amaçlıdır.
