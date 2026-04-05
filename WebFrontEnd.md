@@ -1,6 +1,10 @@
-# Web Frontend Görev Dağılımı
+Web Frontend Görev Dağılımı
 
-**Web Frontend Adresi:** [https://studytrack-frontend-d1dp.vercel.app/)
+Web Frontend Adresi:
+👉 https://studytrack-frontend-d1dp.vercel.app/
+
+🎥 Frontend Test Videosu:
+👉 https://youtu.be/b-BqF04aNW8?si=nMeKQuRkDW5CSIrK
 
 Bu dokümanda, StudyTrack web uygulamasının kullanıcı arayüzü (UI) ve kullanıcı deneyimi (UX) ile ilgili görevler listelenmektedir. Proje bireysel olarak geliştirildiği için tüm web frontend görevleri tek kişi tarafından yürütülmektedir. Bu görevler; sayfa tasarımı, implementasyon, form yönetimi, kullanıcı etkileşimleri ve API entegrasyonunu kapsamaktadır.
 
